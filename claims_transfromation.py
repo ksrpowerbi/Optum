@@ -27,6 +27,11 @@ claims_df = read_bronze_json("Claims")
 
 # COMMAND ----------
 
+print(claims_df.count())
+claims_df = claims_df.replace("NaN",None)
+
+# COMMAND ----------
+
 #transformations specifically for claims
 claims_df = claims_df.drop("_id")
 claims_df = claims_df.replace("NaN",None)
